@@ -38,12 +38,33 @@ html{
     width: 600px;
     padding: 3em;
     text-align: center;
+    position: relative;
 }
 
 .result{
     color: hsl(193, 38%, 86%);
     font-weight: 800;
     font-size: 2em;
+    margin: 1em 0;
+}
+
+.start{
+   background-color: hsl(150, 100%, 66%);
+   padding: .5em;
+   width: 40px;
+   height: 40px;
+   border-radius: 50%;
+   cursor: pointer;
+   position: absolute;
+   bottom: -1em;
+   left: 50%;
+   transform: translateX(-50%);
+    
+    &:hover {
+        transform: translateX(-50%) scale(1.1);
+        transition: transform ease 0.5s;
+        box-shadow: 0px 0px 10px rgba(150, 100%, 66%, 0.50) ;
+    }
 }
 
 
