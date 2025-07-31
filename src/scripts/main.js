@@ -7,15 +7,23 @@ start.addEventListener('click', function(){
     getAdvice()
 })
 
-
 async function getAdvice() {
-    const response = await fetch('https://api.adviceslip.com/advice')
-    const data = await response.json()
-    const advice = `"${data.slip.advice}"`
-    count.innerHTML = data.slip.id
-    typeText(result, advice, 40)
-    console.log(data)
-    // result.innerHTML = `"${data.slip.advice}"`
+    
+    try{
+        const response = await fetch('https://api.adviceslip.com/advice')
+        const data = await response.json()
+        const advice = `"${data.slip.advice}"`
+        count.innerHTML = data.slip.id
+        typeText(result, advice, 40)
+        console.log(data)
+        // result.innerHTML = `"${data.slip.advice}"`
+    }
+
+    catch (error) {
+        result.innerHTML = 'Erro ao buscar conselho. Tente novamente.'
+        console.error(error)
+    }
+
 }
 
 
